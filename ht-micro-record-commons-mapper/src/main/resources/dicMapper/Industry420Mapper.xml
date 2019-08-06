@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.dicMapper.Industry420Mapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.Industry420">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="level2" jdbcType="INTEGER" property="level2" />
+    <result column="level1" jdbcType="INTEGER" property="level1" />
+  </resultMap>
+</mapper>

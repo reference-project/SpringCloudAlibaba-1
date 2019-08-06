@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TReadUserMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TReadUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="card_type" jdbcType="VARCHAR" property="cardType" />
+    <result column="card_num" jdbcType="VARCHAR" property="cardNum" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="label_ids" jdbcType="VARCHAR" property="labelIds" />
+    <result column="label_str" jdbcType="VARCHAR" property="labelStr" />
+    <result column="image_url" jdbcType="VARCHAR" property="imageUrl" />
+    <result column="police_num" jdbcType="VARCHAR" property="policeNum" />
+    <result column="police_name" jdbcType="VARCHAR" property="policeName" />
+    <result column="police_job" jdbcType="VARCHAR" property="policeJob" />
+    <result column="police_department" jdbcType="VARCHAR" property="policeDepartment" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, create_time, card_type, card_num, name, nation, age, sex, label_ids, label_str,
+    image_url, police_num, police_name, police_job, police_department, status
+  </sql>
+  <select id="searchReadUserList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM `t_read_user`
+    WHERE status = 1
+    <if test="sex != null">
+      AND sex = #{sex,jdbcType=VARCHAR}
+    </if>
+    <if test="nation != null">
+      AND nation = #{nation,jdbcType=VARCHAR}
+    </if>
+    <if test="labelStr != null">
+      AND label_ids = #{labelStr,jdbcType=VARCHAR}
+    </if>
+    <if test="startAge != null">
+      AND age &gt;= #{startAge,jdbcType=INTEGER}
+    </if>
+    <if test="endAge != null">
+      AND age &lt;= #{endAge,jdbcType=INTEGER}
+    </if>
+    <if test="keyword != null">
+      AND (card_num like #{keyword,jdbcType=VARCHAR} OR name like #{keyword,jdbcType=VARCHAR}
+      OR police_num like #{keyword,jdbcType=VARCHAR} OR police_name like #{keyword,jdbcType=VARCHAR})
+    </if>
+    <if test="readUserIds != null">
+      AND
+      id NOT in(
+      <foreach close="" collection="readUserIds" item="readUserId" open="" separator=",">
+        #{readUserId}
+      </foreach>
+      )
+    </if>
+    <if test="filterIds != null">
+      AND id NOT IN(
+      <foreach close="" collection="filterIds" item="filterid" open="" separator=",">
+        #{filterid}
+      </foreach>
+      )
+    </if>
+    ORDER BY create_time DESC
+  </select>
+</mapper>

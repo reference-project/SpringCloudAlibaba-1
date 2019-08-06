@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TInfoRecordMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TInfoRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="nowAddr" jdbcType="VARCHAR" property="nowaddr" />
+    <result column="jjbh" jdbcType="VARCHAR" property="jjbh" />
+    <result column="cjdw" jdbcType="VARCHAR" property="cjdw" />
+    <result column="evaluateCodeOne" jdbcType="VARCHAR" property="evaluatecodeone" />
+    <result column="evaluateCode" jdbcType="VARCHAR" property="evaluatecode" />
+    <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="blnr" jdbcType="LONGVARCHAR" property="blnr" />
+  </resultMap>
+</mapper>

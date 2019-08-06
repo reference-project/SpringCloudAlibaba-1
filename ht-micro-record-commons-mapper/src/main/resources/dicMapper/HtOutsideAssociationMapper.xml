@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.dicMapper.HtOutsideAssociationMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.HtOutsideAssociation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="police_code" jdbcType="VARCHAR" property="policeCode" />
+    <result column="police" jdbcType="VARCHAR" property="police" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+    <result column="type_code" jdbcType="INTEGER" property="typeCode" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="patrol" jdbcType="VARCHAR" property="patrol" />
+    <result column="defence" jdbcType="VARCHAR" property="defence" />
+    <result column="community_id" jdbcType="INTEGER" property="communityId" />
+    <result column="community" jdbcType="VARCHAR" property="community" />
+    <result column="community_code" jdbcType="VARCHAR" property="communityCode" />
+    <result column="longitude" jdbcType="DOUBLE" property="longitude" />
+    <result column="latitude" jdbcType="DOUBLE" property="latitude" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="code_suffix" jdbcType="INTEGER" property="codeSuffix" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, police_code, police, code, name, alias, type_code, type, patrol, defence, community_id,
+    community, community_code, longitude, latitude, status, create_time, code_suffix
+  </sql>
+
+ <!-- <select id="selectByExample" parameterType="com.htdc.htbl.dicEntity.HTOutsideAssociationExample" resultMap="BaseResultMap">
+
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ht_outside_association
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>-->
+
+
+
+  <select id="maxCode" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM (select
+    <include refid="Base_Column_List" />
+    from ht_outside_association
+    where
+    length(code) = ( select max(length(code)) from ht_outside_association )) a ORDER BY code desc LIMIT 1;
+  </select>
+  <select id="maxCodeSuffix" resultType="java.lang.Integer">
+    SELECT Max(code_suffix)from ht_outside_association
+  </select>
+  <select id="maxId" resultType="java.lang.Integer">
+      SELECT Max(id)from ht_outside_association
+  </select>
+
+
+  <insert id="insertInfo" parameterType="com.ht.micro.record.commons.domain.HtOutsideAssociation">
+
+    insert into ht_outside_association
+    (id, police_code, police,
+    code, name, alias,
+    type_code, type, patrol,
+    defence, community_id, community,
+    community_code, longitude, latitude,
+    status,code_suffix)
+    values
+    ( #{id,jdbcType=INTEGER}, #{policeCode,jdbcType=VARCHAR},
+    #{police,jdbcType=VARCHAR},
+    #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR},
+    #{typeCode,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{patrol,jdbcType=VARCHAR},
+    #{defence,jdbcType=VARCHAR}, #{communityId,jdbcType=INTEGER}, #{community,jdbcType=VARCHAR},
+    #{communityCode,jdbcType=VARCHAR}, #{longitude,jdbcType=DOUBLE}, #{latitude,jdbcType=DOUBLE},
+    #{status,jdbcType=INTEGER}, #{codeSuffix,jdbcType=INTEGER})
+  </insert>
+</mapper>

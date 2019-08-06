@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TNeo4jDataMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TNeo4jData">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="jjbh" jdbcType="VARCHAR" property="jjbh" />
+    <result column="cjlb" jdbcType="VARCHAR" property="cjlb" />
+    <result column="alipay" jdbcType="VARCHAR" property="alipay" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="bank" jdbcType="VARCHAR" property="bank" />
+    <result column="e_mail" jdbcType="VARCHAR" property="eMail" />
+    <result column="frameEbike" jdbcType="VARCHAR" property="frameebike" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="plate_car" jdbcType="VARCHAR" property="plateCar" />
+    <result column="plateEbike" jdbcType="VARCHAR" property="plateebike" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="website" jdbcType="VARCHAR" property="website" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="yy" jdbcType="VARCHAR" property="yy" />
+    <result column="motorCycle" jdbcType="VARCHAR" property="motorcycle" />
+    <result column="cjdwmc" jdbcType="VARCHAR" property="cjdwmc" />
+    <result column="pglx" jdbcType="VARCHAR" property="pglx" />
+    <result column="jjsj" jdbcType="TIMESTAMP" property="jjsj" />
+    <result column="faxz" jdbcType="VARCHAR" property="faxz" />
+    <result column="cjsj" jdbcType="TIMESTAMP" property="cjsj" />
+    <result column="jieguo" jdbcType="VARCHAR" property="jieguo" />
+  </resultMap>
+</mapper>

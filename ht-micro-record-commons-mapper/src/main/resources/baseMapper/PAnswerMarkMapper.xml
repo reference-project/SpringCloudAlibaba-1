@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.PAnswerMarkMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.PAnswerMark">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="JJBH" jdbcType="VARCHAR" property="jjbh" />
+    <result column="CJBH" jdbcType="VARCHAR" property="cjbh" />
+    <result column="JJRQSJ" jdbcType="TIMESTAMP" property="jjrqsj" />
+    <result column="CJSJ" jdbcType="TIMESTAMP" property="cjsj" />
+    <result column="CJLB" jdbcType="VARCHAR" property="cjlb" />
+    <result column="SPSJ" jdbcType="TIMESTAMP" property="spsj" />
+    <result column="JQFKBS" jdbcType="VARCHAR" property="jqfkbs" />
+    <result column="LQFKBS" jdbcType="VARCHAR" property="lqfkbs" />
+    <result column="JQSPBS" jdbcType="VARCHAR" property="jqspbs" />
+    <result column="BJLX" jdbcType="VARCHAR" property="bjlx" />
+    <result column="JJCITGCTIME" jdbcType="TIMESTAMP" property="jjcitgctime" />
+    <result column="CJCITGCTIME" jdbcType="TIMESTAMP" property="cjcitgctime" />
+    <result column="BJDHSJ" jdbcType="TIMESTAMP" property="bjdhsj" />
+  </resultMap>
+</mapper>

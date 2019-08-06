@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TRecordAnalyzeMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TRecordAnalyze">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ask_obj" jdbcType="INTEGER" property="askObj" />
+    <result column="report_name" jdbcType="VARCHAR" property="reportName" />
+    <result column="used_name" jdbcType="VARCHAR" property="usedName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="birth_date" jdbcType="VARCHAR" property="birthDate" />
+    <result column="nationality" jdbcType="INTEGER" property="nationality" />
+    <result column="nation" jdbcType="INTEGER" property="nation" />
+    <result column="work_unit" jdbcType="VARCHAR" property="workUnit" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="politics_status" jdbcType="INTEGER" property="politicsStatus" />
+    <result column="education_degree" jdbcType="INTEGER" property="educationDegree" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="id_card_id" jdbcType="INTEGER" property="idCardId" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="register_address" jdbcType="VARCHAR" property="registerAddress" />
+    <result column="now_address" jdbcType="VARCHAR" property="nowAddress" />
+    <result column="relate_record" jdbcType="VARCHAR" property="relateRecord" />
+    <result column="jjbh" jdbcType="VARCHAR" property="jjbh" />
+    <result column="jqxq" jdbcType="VARCHAR" property="jqxq" />
+    <result column="ssaq" jdbcType="VARCHAR" property="ssaq" />
+    <result column="first_case" jdbcType="VARCHAR" property="firstCase" />
+    <result column="second_case" jdbcType="VARCHAR" property="secondCase" />
+    <result column="third_case" jdbcType="VARCHAR" property="thirdCase" />
+    <result column="min_fasj" jdbcType="VARCHAR" property="minFasj" />
+    <result column="max_fasj" jdbcType="VARCHAR" property="maxFasj" />
+    <result column="xzsj" jdbcType="VARCHAR" property="xzsj" />
+    <result column="sfdd" jdbcType="VARCHAR" property="sfdd" />
+    <result column="xqnw" jdbcType="VARCHAR" property="xqnw" />
+    <result column="fsdd" jdbcType="VARCHAR" property="fsdd" />
+    <result column="zasd" jdbcType="VARCHAR" property="zasd" />
+    <result column="qhmb" jdbcType="VARCHAR" property="qhmb" />
+    <result column="qybw" jdbcType="VARCHAR" property="qybw" />
+    <result column="zagj" jdbcType="VARCHAR" property="zagj" />
+    <result column="xzdx" jdbcType="VARCHAR" property="xzdx" />
+    <result column="jtgj" jdbcType="VARCHAR" property="jtgj" />
+    <result column="sawp_info" jdbcType="VARCHAR" property="sawpInfo" />
+    <result column="wyj_info" jdbcType="VARCHAR" property="wyjInfo" />
+    <result column="sadx_info" jdbcType="VARCHAR" property="sadxInfo" />
+    <result column="blzy" jdbcType="VARCHAR" property="blzy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="record_id" jdbcType="INTEGER" property="recordId" />
+  </resultMap>
+</mapper>

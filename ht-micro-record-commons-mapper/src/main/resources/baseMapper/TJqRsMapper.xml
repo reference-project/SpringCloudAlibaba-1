@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TJqRsMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TJqRs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="creator_name" jdbcType="VARCHAR" property="creatorName" />
+    <result column="jqxq" jdbcType="VARCHAR" property="jqxq" />
+    <result column="jh" jdbcType="VARCHAR" property="jh" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="same_value" jdbcType="VARCHAR" property="sameValue" />
+    <result column="jjbh_arr" jdbcType="LONGVARCHAR" property="jjbhArr" />
+  </resultMap>
+</mapper>

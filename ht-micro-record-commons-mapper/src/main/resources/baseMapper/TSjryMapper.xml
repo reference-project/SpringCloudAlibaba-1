@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TSjryMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TSjry">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="CITGC_SOURCE" jdbcType="VARCHAR" property="citgcSource" />
+    <result column="CITGC_TIME" jdbcType="TIMESTAMP" property="citgcTime" />
+    <result column="DJDW" jdbcType="VARCHAR" property="djdw" />
+    <result column="DJDWMC" jdbcType="VARCHAR" property="djdwmc" />
+    <result column="DJR" jdbcType="VARCHAR" property="djr" />
+    <result column="DJRXM" jdbcType="VARCHAR" property="djrxm" />
+    <result column="DJSJ" jdbcType="TIMESTAMP" property="djsj" />
+    <result column="JJBH" jdbcType="VARCHAR" property="jjbh" />
+    <result column="JLBH" jdbcType="VARCHAR" property="jlbh" />
+    <result column="RAS" jdbcType="CHAR" property="ras" />
+    <result column="RYBH" jdbcType="VARCHAR" property="rybh" />
+    <result column="SJLB" jdbcType="CHAR" property="sjlb" />
+    <result column="XGDW" jdbcType="VARCHAR" property="xgdw" />
+    <result column="XGDWMC" jdbcType="VARCHAR" property="xgdwmc" />
+    <result column="XGR" jdbcType="VARCHAR" property="xgr" />
+    <result column="XGRXM" jdbcType="VARCHAR" property="xgrxm" />
+    <result column="XGSJ" jdbcType="TIMESTAMP" property="xgsj" />
+    <result column="XZZ" jdbcType="VARCHAR" property="xzz" />
+  </resultMap>
+</mapper>

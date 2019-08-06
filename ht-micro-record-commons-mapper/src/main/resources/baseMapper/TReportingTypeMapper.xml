@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TReportingTypeMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TReportingType">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="jurisdiction" jdbcType="VARCHAR" property="jurisdiction" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="time_type" jdbcType="VARCHAR" property="timeType" />
+    <result column="jurisdiction_name" jdbcType="VARCHAR" property="jurisdictionName" />
+  </resultMap>
+</mapper>

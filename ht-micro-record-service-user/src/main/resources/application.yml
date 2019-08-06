@@ -1,0 +1,68 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.2.7:9876
+      bindings:
+        output:
+          content-type: application/json
+          destination: topic-email
+          producer:
+            group: group-email
+  datasource:
+      base:
+        #监控统计拦截的filters
+        filters: stat
+        type: com.alibaba.druid.pool.DruidDataSource
+        jdbc-url: jdbc:mysql://192.168.2.7:185/ht_micro_record?useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        max-idle: 10
+        max-wait: 10000
+        min-idle: 5
+        initial-size: 5
+        validation-query: SELECT 1
+        test-on-borrow: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 18800
+      dic:
+        #监控统计拦截的filters
+        filters: stat
+        type: com.alibaba.druid.pool.DruidDataSource
+        jdbc-url: jdbc:mysql://192.168.1.48:3306/ht_nlp?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: Sonar@1234
+        driver-class-name: com.mysql.jdbc.Driver
+        max-idle: 10
+        max-wait: 10000
+        min-idle: 5
+        initial-size: 5
+        validation-query: SELECT 1
+        test-on-borrow: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 18800
+################################nacos##############################################
+#spring:
+#  application:
+#    name: ht-micro-record-service-user
+#
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+#    sentinel:
+#      transport:
+#        port: 8719
+#        dashboard: 192.168.2.7:190
+#
+#
+#server:
+#  port: 9506
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"

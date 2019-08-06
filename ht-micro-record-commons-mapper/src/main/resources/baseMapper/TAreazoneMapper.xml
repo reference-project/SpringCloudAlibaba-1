@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TAreazoneMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TAreazone">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="province" jdbcType="INTEGER" property="province" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="zone" jdbcType="INTEGER" property="zone" />
+    <result column="areazone" jdbcType="VARCHAR" property="areazone" />
+  </resultMap>
+</mapper>

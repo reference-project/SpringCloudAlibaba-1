@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.FwzxUserMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.FwzxUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="dbid" jdbcType="INTEGER" property="dbid" />
+    <result column="activeflag" jdbcType="VARCHAR" property="activeflag" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="cate" jdbcType="CHAR" property="cate" />
+    <result column="companyid" jdbcType="INTEGER" property="companyid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="delflag" jdbcType="CHAR" property="delflag" />
+    <result column="idcard" jdbcType="VARCHAR" property="idcard" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="namepycap" jdbcType="VARCHAR" property="namepycap" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="policenum" jdbcType="VARCHAR" property="policenum" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="signature" jdbcType="VARCHAR" property="signature" />
+    <result column="tel_mobile" jdbcType="VARCHAR" property="telMobile" />
+    <result column="tel_office" jdbcType="VARCHAR" property="telOffice" />
+    <result column="tel_short" jdbcType="VARCHAR" property="telShort" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="type" jdbcType="CHAR" property="type" />
+    <result column="photo" jdbcType="LONGVARBINARY" property="photo" />
+  </resultMap>
+</mapper>

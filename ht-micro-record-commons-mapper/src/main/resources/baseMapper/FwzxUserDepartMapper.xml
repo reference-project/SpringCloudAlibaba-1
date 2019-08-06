@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.FwzxUserDepartMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.FwzxUserDepart">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="dbid" jdbcType="INTEGER" property="dbid" />
+    <result column="deptid" jdbcType="VARCHAR" property="deptid" />
+    <result column="dutycontent" jdbcType="VARCHAR" property="dutycontent" />
+    <result column="dutyid" jdbcType="VARCHAR" property="dutyid" />
+    <result column="dutyname" jdbcType="VARCHAR" property="dutyname" />
+    <result column="isprimary" jdbcType="CHAR" property="isprimary" />
+    <result column="isshow" jdbcType="CHAR" property="isshow" />
+    <result column="ordernum" jdbcType="INTEGER" property="ordernum" />
+    <result column="policenum" jdbcType="VARCHAR" property="policenum" />
+    <result column="USERDBID" jdbcType="INTEGER" property="userdbid" />
+  </resultMap>
+</mapper>

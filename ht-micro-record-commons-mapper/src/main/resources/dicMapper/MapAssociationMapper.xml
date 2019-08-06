@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.dicMapper.MapAssociationMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.MapAssociation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="police" jdbcType="VARCHAR" property="police" />
+    <result column="police_code" jdbcType="VARCHAR" property="policeCode" />
+    <result column="community" jdbcType="VARCHAR" property="community" />
+    <result column="community_code" jdbcType="VARCHAR" property="communityCode" />
+    <result column="c_alias" jdbcType="VARCHAR" property="cAlias" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="district_code" jdbcType="VARCHAR" property="districtCode" />
+    <result column="d_alias" jdbcType="VARCHAR" property="dAlias" />
+    <result column="patrol" jdbcType="VARCHAR" property="patrol" />
+    <result column="defence" jdbcType="VARCHAR" property="defence" />
+    <result column="longitude" jdbcType="DOUBLE" property="longitude" />
+    <result column="latitude" jdbcType="DOUBLE" property="latitude" />
+    <result column="type_code" jdbcType="INTEGER" property="typeCode" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+  <!-- 巡区,防区 -->
+  <select id="findByPoliceCode" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    DISTINCT
+    <if test="patrol != null">
+      patrol
+    </if>
+    <if test="defence != null">
+      defence
+    </if>
+    FROM map_association
+    WHERE 1 = 1
+    <if test="policeCode != null">
+      AND police_code = #{policeCode,jdbcType=VARCHAR}
+    </if>
+    <if test="patrol != null">
+      AND patrol != 'null';
+    </if>
+    <if test="defence != null">
+      AND defence != 'null';
+    </if>
+  </select>
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TUserMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="police_num" jdbcType="VARCHAR" property="policeNum" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="depart_id" jdbcType="INTEGER" property="departId" />
+    <result column="depart_name" jdbcType="VARCHAR" property="departName" />
+    <result column="unit_code" jdbcType="VARCHAR" property="unitCode" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_disabled" jdbcType="VARCHAR" property="isDisabled" />
+  </resultMap>
+  <sql id="Base_Column_List">
+
+    id, username, password, police_num, name, position, depart_id, depart_name, unit_code,
+    role_id, role_name, create_time, update_time, is_disabled
+  </sql>
+  <select id="pageList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM `t_user`
+    WHERE 1 = 1
+    <if test="departId != null">
+      AND depart_id = #{departId,jdbcType=INTEGER}
+    </if>
+    <if test="keyword != null">
+      AND (name like #{keyword,jdbcType=VARCHAR}
+      OR
+      police_num like
+      #{keyword,jdbcType=VARCHAR})
+    </if>
+    <if test="isDisabled != null">
+      AND is_disabled = #{isDisabled,jdbcType=VARCHAR}
+    </if>
+    ORDER BY create_time DESC
+  </select>
+</mapper>

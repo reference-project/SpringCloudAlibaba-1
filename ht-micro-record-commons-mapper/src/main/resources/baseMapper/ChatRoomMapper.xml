@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.ChatRoomMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.ChatRoom">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="collaborative_id" jdbcType="INTEGER" property="collaborativeId" />
+    <result column="case_name" jdbcType="VARCHAR" property="caseName" />
+    <result column="room_name" jdbcType="VARCHAR" property="roomName" />
+    <result column="whether_pas" jdbcType="INTEGER" property="whetherPas" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_ids" jdbcType="VARCHAR" property="userIds" />
+    <result column="creator_id" jdbcType="VARCHAR" property="creatorId" />
+    <result column="create_name" jdbcType="VARCHAR" property="createName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="chat_conten_id" jdbcType="VARCHAR" property="chatContenId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_dept" jdbcType="INTEGER" property="createDept" />
+    <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
+    <result column="police_num" jdbcType="VARCHAR" property="policeNum" />
+    <result column="case_arr_id" jdbcType="VARCHAR" property="caseArrId" />
+    <result column="user_name_arr" jdbcType="VARCHAR" property="userNameArr" />
+  </resultMap>
+</mapper>

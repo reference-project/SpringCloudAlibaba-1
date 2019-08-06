@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TDictionaryMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TDictionary">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="sort_num" jdbcType="INTEGER" property="sortNum" />
+    <result column="other" jdbcType="VARCHAR" property="other" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="fix_status" jdbcType="VARCHAR" property="fixStatus" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+  </resultMap>
+</mapper>

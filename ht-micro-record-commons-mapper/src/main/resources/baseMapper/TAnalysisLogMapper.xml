@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TAnalysisLogMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TAnalysisLog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+    <result column="column_en" jdbcType="VARCHAR" property="columnEn" />
+    <result column="column_cn" jdbcType="VARCHAR" property="columnCn" />
+    <result column="old_val" jdbcType="VARCHAR" property="oldVal" />
+    <result column="new_val" jdbcType="VARCHAR" property="newVal" />
+    <result column="creator_id" jdbcType="INTEGER" property="creatorId" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="analysis_id" jdbcType="VARCHAR" property="analysisId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>

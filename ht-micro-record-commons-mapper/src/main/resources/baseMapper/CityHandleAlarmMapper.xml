@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.CityHandleAlarmMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.CityHandleAlarm">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="CJBH" jdbcType="VARCHAR" property="cjbh" />
+    <result column="AJSLDW" jdbcType="CHAR" property="ajsldw" />
+    <result column="AJSLR" jdbcType="CHAR" property="ajslr" />
+    <result column="BCCLJG" jdbcType="VARCHAR" property="bccljg" />
+    <result column="BZDW" jdbcType="VARCHAR" property="bzdw" />
+    <result column="BZDWMC" jdbcType="VARCHAR" property="bzdwmc" />
+    <result column="BZR" jdbcType="VARCHAR" property="bzr" />
+    <result column="BZRXM" jdbcType="VARCHAR" property="bzrxm" />
+    <result column="BZSJ" jdbcType="TIMESTAMP" property="bzsj" />
+    <result column="CDCZ" jdbcType="VARCHAR" property="cdcz" />
+    <result column="CDJDC" jdbcType="VARCHAR" property="cdjdc" />
+    <result column="CDJL" jdbcType="VARCHAR" property="cdjl" />
+    <result column="CITGC_SOURCE" jdbcType="VARCHAR" property="citgcSource" />
+    <result column="CITGC_TIME" jdbcType="TIMESTAMP" property="citgcTime" />
+    <result column="CJDW" jdbcType="CHAR" property="cjdw" />
+    <result column="CJDWMC" jdbcType="VARCHAR" property="cjdwmc" />
+    <result column="CJFKSJ" jdbcType="TIMESTAMP" property="cjfksj" />
+    <result column="CJJG" jdbcType="CHAR" property="cjjg" />
+    <result column="CJJLX" jdbcType="VARCHAR" property="cjjlx" />
+    <result column="CJLB" jdbcType="CHAR" property="cjlb" />
+    <result column="CJMLPH" jdbcType="VARCHAR" property="cjmlph" />
+    <result column="CJMPHZ" jdbcType="CHAR" property="cjmphz" />
+    <result column="CJR" jdbcType="CHAR" property="cjr" />
+    <result column="CJRHZXS" jdbcType="VARCHAR" property="cjrhzxs" />
+    <result column="CJRLXFS" jdbcType="VARCHAR" property="cjrlxfs" />
+    <result column="CJSJ" jdbcType="TIMESTAMP" property="cjsj" />
+    <result column="CJXXDD" jdbcType="VARCHAR" property="cjxxdd" />
+    <result column="CJXZ" jdbcType="VARCHAR" property="cjxz" />
+    <result column="CJXZQH" jdbcType="CHAR" property="cjxzqh" />
+    <result column="CJYSJSDW" jdbcType="VARCHAR" property="cjysjsdw" />
+    <result column="CJYSJSR" jdbcType="VARCHAR" property="cjysjsr" />
+    <result column="CJYSJSSJ" jdbcType="VARCHAR" property="cjysjssj" />
+    <result column="CLJGNR" jdbcType="VARCHAR" property="cljgnr" />
+    <result column="DDXCSJ" jdbcType="TIMESTAMP" property="ddxcsj" />
+    <result column="DJDW" jdbcType="CHAR" property="djdw" />
+    <result column="DJDWMC" jdbcType="VARCHAR" property="djdwmc" />
+    <result column="DJR" jdbcType="CHAR" property="djr" />
+    <result column="DJRXM" jdbcType="VARCHAR" property="djrxm" />
+    <result column="DJSJ" jdbcType="TIMESTAMP" property="djsj" />
+    <result column="FKLYH" jdbcType="VARCHAR" property="fklyh" />
+    <result column="FSYY" jdbcType="CHAR" property="fsyy" />
+    <result column="GIS_X" jdbcType="VARCHAR" property="gisX" />
+    <result column="GIS_Y" jdbcType="VARCHAR" property="gisY" />
+    <result column="GLAJBH" jdbcType="VARCHAR" property="glajbh" />
+    <result column="GLAJZT" jdbcType="CHAR" property="glajzt" />
+    <result column="GXDW" jdbcType="VARCHAR" property="gxdw" />
+    <result column="GXDWMC" jdbcType="VARCHAR" property="gxdwmc" />
+    <result column="GXR" jdbcType="VARCHAR" property="gxr" />
+    <result column="GXRXM" jdbcType="VARCHAR" property="gxrxm" />
+    <result column="GXSJ" jdbcType="TIMESTAMP" property="gxsj" />
+    <result column="JJBH" jdbcType="VARCHAR" property="jjbh" />
+    <result column="JJDBH" jdbcType="VARCHAR" property="jjdbh" />
+    <result column="JJETS" jdbcType="VARCHAR" property="jjets" />
+    <result column="JJFNS" jdbcType="VARCHAR" property="jjfns" />
+    <result column="JJRZS" jdbcType="VARCHAR" property="jjrzs" />
+    <result column="JQSX" jdbcType="VARCHAR" property="jqsx" />
+    <result column="JZQZ" jdbcType="VARCHAR" property="jzqz" />
+    <result column="JZSY" jdbcType="VARCHAR" property="jzsy" />
+    <result column="LDCLSJ" jdbcType="TIMESTAMP" property="ldclsj" />
+    <result column="LZSCRS" jdbcType="VARCHAR" property="lzscrs" />
+    <result column="PHXSAJ" jdbcType="VARCHAR" property="phxsaj" />
+    <result column="PHXXAJ" jdbcType="VARCHAR" property="phxxaj" />
+    <result column="PHZAAJ" jdbcType="VARCHAR" property="phzaaj" />
+    <result column="PJDBH" jdbcType="VARCHAR" property="pjdbh" />
+    <result column="RYSSS" jdbcType="VARCHAR" property="rysss" />
+    <result column="RYSWS" jdbcType="VARCHAR" property="rysws" />
+    <result column="SFCS" jdbcType="CHAR" property="sfcs" />
+    <result column="SFSJSX" jdbcType="TIMESTAMP" property="sfsjsx" />
+    <result column="SFSJXX" jdbcType="TIMESTAMP" property="sfsjxx" />
+    <result column="SFXQ" jdbcType="VARCHAR" property="sfxq" />
+    <result column="SPSJ" jdbcType="TIMESTAMP" property="spsj" />
+    <result column="SPXGSJ" jdbcType="TIMESTAMP" property="spxgsj" />
+    <result column="SSXXQK" jdbcType="VARCHAR" property="ssxxqk" />
+    <result column="TPRF" jdbcType="VARCHAR" property="tprf" />
+    <result column="TQQK" jdbcType="CHAR" property="tqqk" />
+    <result column="WHSS" jdbcType="DECIMAL" property="whss" />
+    <result column="XGDW" jdbcType="VARCHAR" property="xgdw" />
+    <result column="XGR" jdbcType="CHAR" property="xgr" />
+    <result column="XGRXM" jdbcType="VARCHAR" property="xgrxm" />
+    <result column="XGSJ" jdbcType="TIMESTAMP" property="xgsj" />
+    <result column="ZBLD" jdbcType="CHAR" property="zbld" />
+    <result column="ZBLDDW" jdbcType="VARCHAR" property="zblddw" />
+    <result column="ZBLDDWMC" jdbcType="VARCHAR" property="zblddwmc" />
+    <result column="ZBLDXM" jdbcType="VARCHAR" property="zbldxm" />
+    <result column="ZHZACY" jdbcType="VARCHAR" property="zhzacy" />
+    <result column="ZJJJSS" jdbcType="DECIMAL" property="zjjjss" />
+    <result column="RKSJ" jdbcType="DATE" property="rksj" />
+    <result column="CLJGNRLENGTH" jdbcType="VARCHAR" property="cljgnrlength" />
+    <result column="XZB" jdbcType="LONGVARBINARY" property="xzb" />
+    <result column="YZB" jdbcType="LONGVARBINARY" property="yzb" />
+  </resultMap>
+</mapper>

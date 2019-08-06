@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.dicMapper.OutsideAssociationMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.OutsideAssociation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="police_code" jdbcType="VARCHAR" property="policeCode" />
+    <result column="police" jdbcType="VARCHAR" property="police" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+    <result column="type_code" jdbcType="INTEGER" property="typeCode" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="patrol" jdbcType="VARCHAR" property="patrol" />
+    <result column="defence" jdbcType="VARCHAR" property="defence" />
+    <result column="community" jdbcType="VARCHAR" property="community" />
+    <result column="community_code" jdbcType="VARCHAR" property="communityCode" />
+    <result column="longitude" jdbcType="DOUBLE" property="longitude" />
+    <result column="latitude" jdbcType="DOUBLE" property="latitude" />
+  </resultMap>
+</mapper>

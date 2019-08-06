@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TInfoAlarmMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TInfoAlarm">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="jjbh" jdbcType="VARCHAR" property="jjbh" />
+    <result column="jjrqsj" jdbcType="TIMESTAMP" property="jjrqsj" />
+    <result column="sfdd" jdbcType="VARCHAR" property="sfdd" />
+    <result column="cjlb" jdbcType="VARCHAR" property="cjlb" />
+    <result column="cjxxdd" jdbcType="VARCHAR" property="cjxxdd" />
+    <result column="cjxz" jdbcType="VARCHAR" property="cjxz" />
+    <result column="cjdw" jdbcType="VARCHAR" property="cjdw" />
+    <result column="cjdwmc" jdbcType="VARCHAR" property="cjdwmc" />
+    <result column="sfsjsx" jdbcType="TIMESTAMP" property="sfsjsx" />
+    <result column="sfsjxx" jdbcType="TIMESTAMP" property="sfsjxx" />
+    <result column="cjbh" jdbcType="VARCHAR" property="cjbh" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="bjnr" jdbcType="LONGVARCHAR" property="bjnr" />
+    <result column="cljgnr" jdbcType="LONGVARCHAR" property="cljgnr" />
+    <result column="bccljg" jdbcType="LONGVARCHAR" property="bccljg" />
+  </resultMap>
+</mapper>

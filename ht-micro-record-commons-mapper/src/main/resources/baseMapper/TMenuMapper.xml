@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TMenuMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TMenu">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="p_id" jdbcType="INTEGER" property="pId" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
+  </resultMap>
+</mapper>

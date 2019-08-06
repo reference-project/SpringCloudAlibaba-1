@@ -1,0 +1,61 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.2.7:9876
+        bindings:
+          input:
+            consumer:
+              orderly: true
+      bindings:
+        input:
+          destination: topic-email
+          content-type: application/json
+          group: group-email
+          consumer:
+            maxAttempts: 1
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+#######################################nacos###################################
+#spring:
+#  application:
+#    name: ht-micro-record-service-sms
+#  mail:
+#    host: smtp.163.com
+#    port: 25
+#    # 你的邮箱授权码
+#    password: codewj123456
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#            required: true
+#    # 发送邮件的邮箱地址
+#    username: m15806204096@163.com
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+#    sentinel:
+#      transport:
+#        port: 8719
+#        dashboard: 192.168.2.7:190
+#
+#
+#server:
+#  port: 9507
+#
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"

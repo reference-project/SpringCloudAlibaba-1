@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TTopicMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TTopic">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cjlb" jdbcType="VARCHAR" property="cjlb" />
+    <result column="cjlb2" jdbcType="VARCHAR" property="cjlb2" />
+    <result column="cjlb3" jdbcType="VARCHAR" property="cjlb3" />
+    <result column="cjlb4" jdbcType="VARCHAR" property="cjlb4" />
+    <result column="pglb1" jdbcType="VARCHAR" property="pglb1" />
+    <result column="pglb2" jdbcType="VARCHAR" property="pglb2" />
+    <result column="pglb3" jdbcType="VARCHAR" property="pglb3" />
+    <result column="pglb4" jdbcType="VARCHAR" property="pglb4" />
+    <result column="bjfs" jdbcType="VARCHAR" property="bjfs" />
+    <result column="min_bjsj" jdbcType="VARCHAR" property="minBjsj" />
+    <result column="max_bjsj" jdbcType="VARCHAR" property="maxBjsj" />
+    <result column="min_afsd" jdbcType="VARCHAR" property="minAfsd" />
+    <result column="max_afsd" jdbcType="VARCHAR" property="maxAfsd" />
+    <result column="xzsj" jdbcType="VARCHAR" property="xzsj" />
+    <result column="ssxq" jdbcType="VARCHAR" property="ssxq" />
+    <result column="xqnw" jdbcType="VARCHAR" property="xqnw" />
+    <result column="fsdd" jdbcType="VARCHAR" property="fsdd" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="building" jdbcType="VARCHAR" property="building" />
+    <result column="cell" jdbcType="VARCHAR" property="cell" />
+    <result column="room" jdbcType="VARCHAR" property="room" />
+    <result column="floor" jdbcType="VARCHAR" property="floor" />
+    <result column="otherUnit" jdbcType="VARCHAR" property="otherunit" />
+    <result column="road" jdbcType="VARCHAR" property="road" />
+    <result column="zasd" jdbcType="VARCHAR" property="zasd" />
+    <result column="regionType" jdbcType="VARCHAR" property="regiontype" />
+    <result column="publicPlace" jdbcType="VARCHAR" property="publicplace" />
+    <result column="publicPlaceType" jdbcType="VARCHAR" property="publicplacetype" />
+    <result column="doorNo" jdbcType="VARCHAR" property="doorno" />
+    <result column="region" jdbcType="VARCHAR" property="region" />
+    <result column="bzdz" jdbcType="VARCHAR" property="bzdz" />
+    <result column="qhmb" jdbcType="VARCHAR" property="qhmb" />
+    <result column="qybw" jdbcType="VARCHAR" property="qybw" />
+    <result column="zagj" jdbcType="VARCHAR" property="zagj" />
+    <result column="xzdx" jdbcType="VARCHAR" property="xzdx" />
+    <result column="jtgj" jdbcType="VARCHAR" property="jtgj" />
+    <result column="qzf" jdbcType="VARCHAR" property="qzf" />
+    <result column="spjk" jdbcType="VARCHAR" property="spjk" />
+    <result column="xsd_status" jdbcType="VARCHAR" property="xsdStatus" />
+    <result column="xsd_val" jdbcType="VARCHAR" property="xsdVal" />
+    <result column="topic_name" jdbcType="VARCHAR" property="topicName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="is_systen" jdbcType="VARCHAR" property="isSysten" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="creator_name" jdbcType="VARCHAR" property="creatorName" />
+  </resultMap>
+</mapper>

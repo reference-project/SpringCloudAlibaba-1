@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TCaseInfoMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TCaseInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="current_cause" jdbcType="VARCHAR" property="currentCause" />
+    <result column="depart_id" jdbcType="INTEGER" property="departId" />
+    <result column="depart_arr" jdbcType="VARCHAR" property="departArr" />
+    <result column="handle_unit" jdbcType="VARCHAR" property="handleUnit" />
+    <result column="case_code" jdbcType="VARCHAR" property="caseCode" />
+    <result column="ask_person1_code" jdbcType="VARCHAR" property="askPerson1Code" />
+    <result column="ask_person1" jdbcType="VARCHAR" property="askPerson1" />
+    <result column="ask_person2_code" jdbcType="VARCHAR" property="askPerson2Code" />
+    <result column="ask_person2" jdbcType="VARCHAR" property="askPerson2" />
+    <result column="recorder_code" jdbcType="VARCHAR" property="recorderCode" />
+    <result column="recorder" jdbcType="VARCHAR" property="recorder" />
+    <result column="ask_address" jdbcType="VARCHAR" property="askAddress" />
+    <result column="ask_obj_id" jdbcType="INTEGER" property="askObjId" />
+    <result column="ask_obj" jdbcType="VARCHAR" property="askObj" />
+    <result column="accomplices_way" jdbcType="INTEGER" property="accomplicesWay" />
+    <result column="arrive_time" jdbcType="TIMESTAMP" property="arriveTime" />
+    <result column="leave_time" jdbcType="TIMESTAMP" property="leaveTime" />
+    <result column="question_count" jdbcType="INTEGER" property="questionCount" />
+    <result column="case_name" jdbcType="VARCHAR" property="caseName" />
+    <result column="certificate_id" jdbcType="INTEGER" property="certificateId" />
+    <result column="certificate_type" jdbcType="VARCHAR" property="certificateType" />
+    <result column="certificate_num" jdbcType="VARCHAR" property="certificateNum" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="used_name" jdbcType="VARCHAR" property="usedName" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="birth_date" jdbcType="VARCHAR" property="birthDate" />
+    <result column="nation" jdbcType="INTEGER" property="nation" />
+    <result column="nationality" jdbcType="INTEGER" property="nationality" />
+    <result column="politics_status" jdbcType="INTEGER" property="politicsStatus" />
+    <result column="education_degree" jdbcType="INTEGER" property="educationDegree" />
+    <result column="is_npc_member" jdbcType="INTEGER" property="isNpcMember" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="work_unit" jdbcType="VARCHAR" property="workUnit" />
+    <result column="register_place" jdbcType="VARCHAR" property="registerPlace" />
+    <result column="present_address" jdbcType="INTEGER" property="presentAddress" />
+    <result column="present_address_detail" jdbcType="VARCHAR" property="presentAddressDetail" />
+    <result column="illegal_record" jdbcType="VARCHAR" property="illegalRecord" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="type_arr" jdbcType="VARCHAR" property="typeArr" />
+    <result column="first_type" jdbcType="INTEGER" property="firstType" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="other" jdbcType="VARCHAR" property="other" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_evaluate" jdbcType="INTEGER" property="isEvaluate" />
+    <result column="cost_time" jdbcType="VARCHAR" property="costTime" />
+    <result column="record_time" jdbcType="VARCHAR" property="recordTime" />
+    <result column="mac_id" jdbcType="VARCHAR" property="macId" />
+    <result column="read_user_id" jdbcType="INTEGER" property="readUserId" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="sync_id" jdbcType="INTEGER" property="syncId" />
+    <result column="jqxq" jdbcType="VARCHAR" property="jqxq" />
+    <result column="export_start_time" jdbcType="TIMESTAMP" property="exportStartTime" />
+    <result column="export_end_time" jdbcType="TIMESTAMP" property="exportEndTime" />
+    <result column="xsbr_head" jdbcType="INTEGER" property="xsbrHead" />
+    <result column="xsbr_person1" jdbcType="VARCHAR" property="xsbrPerson1" />
+    <result column="xsbr_person1_code" jdbcType="VARCHAR" property="xsbrPerson1Code" />
+    <result column="xsbr_person2" jdbcType="VARCHAR" property="xsbrPerson2" />
+    <result column="xsbr_person2_code" jdbcType="VARCHAR" property="xsbrPerson2Code" />
+    <result column="xsbr_brdx" jdbcType="VARCHAR" property="xsbrBrdx" />
+    <result column="xsbr_location" jdbcType="VARCHAR" property="xsbrLocation" />
+    <result column="xsbr_goal" jdbcType="VARCHAR" property="xsbrGoal" />
+    <result column="xsbr_startime" jdbcType="TIMESTAMP" property="xsbrStartime" />
+    <result column="xsbr_endtime" jdbcType="TIMESTAMP" property="xsbrEndtime" />
+    <result column="xsbr_jzr_cer_type" jdbcType="INTEGER" property="xsbrJzrCerType" />
+    <result column="xsbr_jzr_cer_num" jdbcType="VARCHAR" property="xsbrJzrCerNum" />
+    <result column="xsbr_jzr_sex" jdbcType="VARCHAR" property="xsbrJzrSex" />
+    <result column="xsbr_jzr_age" jdbcType="VARCHAR" property="xsbrJzrAge" />
+    <result column="xsbr_jzr" jdbcType="VARCHAR" property="xsbrJzr" />
+    <result column="xsbr_jzr_unit" jdbcType="VARCHAR" property="xsbrJzrUnit" />
+    <result column="xsbr_jzr_address" jdbcType="VARCHAR" property="xsbrJzrAddress" />
+    <result column="xsbr_zcry" jdbcType="VARCHAR" property="xsbrZcry" />
+    <result column="crime_address" jdbcType="VARCHAR" property="crimeAddress" />
+    <result column="latitudel" jdbcType="VARCHAR" property="latitudel" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="is_delete" jdbcType="VARCHAR" property="isDelete" />
+    <result column="coordinate_address" jdbcType="VARCHAR" property="coordinateAddress" />
+    <result column="bjlx" jdbcType="VARCHAR" property="bjlx" />
+    <result column="update_count" jdbcType="INTEGER" property="updateCount" />
+    <result column="plain_text" jdbcType="LONGVARCHAR" property="plainText" />
+    <result column="text" jdbcType="LONGVARCHAR" property="text" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      This element is automatically generated by MyBatis Generator, do not modify.
+    -->
+    id, current_cause, depart_id, depart_arr, handle_unit, case_code, ask_person1_code,
+    ask_person1, ask_person2_code, ask_person2, recorder_code, recorder, ask_address,
+    ask_obj_id, ask_obj, accomplices_way, arrive_time, leave_time, question_count, case_name,
+    certificate_id, certificate_type, certificate_num, user_name, used_name, age, sex,
+    nick_name, birth_date, nation, nationality, politics_status, education_degree, is_npc_member,
+    position, phone, work_unit, register_place, present_address, present_address_detail,
+    illegal_record, create_time, update_time, start_time, end_time, type_arr, first_type,
+    type_name, other, status, is_evaluate, cost_time, record_time, mac_id, read_user_id,
+    creator, sync_id, jqxq, export_start_time, export_end_time, xsbr_head, xsbr_person1,
+    xsbr_person1_code, xsbr_person2, xsbr_person2_code, xsbr_brdx, xsbr_location, xsbr_goal,
+    xsbr_startime, xsbr_endtime, xsbr_jzr_cer_type, xsbr_jzr_cer_num, xsbr_jzr_sex, xsbr_jzr_age,
+    xsbr_jzr, xsbr_jzr_unit, xsbr_jzr_address, xsbr_zcry, crime_address, latitudel, longitude,
+    coordinate_address, is_delete, bjlx, update_count
+  </sql>
+
+  <sql id="Blob_Column_List">
+
+  </sql>
+
+
+  <!-- 笔录类型饼状图 -->
+  <select id="selectSortByType" parameterType="java.util.Map" resultType="java.util.HashMap">
+    SELECT b.id ,COUNT(a.first_type) AS COUNT
+    FROM (SELECT * FROM
+    t_case_info WHERE depart_id IN
+    <if test="ids != null">
+      <foreach close=")" collection="ids" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    ) a
+    <if test="blTypes != null">
+      RIGHT JOIN
+      <foreach close=")" collection="blTypes" item="item" open="(" separator="UNION">
+        SELECT #{item,jdbcType=INTEGER} AS id
+      </foreach>
+      b ON a.first_type=b.id
+    </if>
+    <if test="startTime != null">
+      AND create_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND create_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    GROUP BY b.id ORDER BY COUNT DESC
+  </select>
+  <!-- 申请选择笔录 -->
+  <select id="applyChoice" parameterType="java.util.Map" resultType="java.util.HashMap">
+    SELECT GROUP_CONCAT(id),COUNT(*) FROM t_case_info
+    WHERE 1 = 1 and is_delete != '1'
+    <if test="startTime != null">
+      AND create_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND create_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    <if test="caseCode != null">
+      AND case_code like #{caseCode,jdbcType=VARCHAR}
+    </if>
+    <if test="departArr != null">
+      AND depart_arr like #{departArr,jdbcType=VARCHAR}
+    </if>
+    <if test="name != null">
+      AND user_name like #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="caseId != null">
+      AND id != #{caseId,jdbcType=INTEGER}
+    </if>
+    <if test="certiNum != null">
+      AND certificate_num like #{certiNum,jdbcType=VARCHAR}
+    </if>
+    <if test="phone != null">
+      AND phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="departIds != null">
+      AND depart_id NOT IN
+      <foreach close=")" collection="departIds" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="ids != null">
+      AND id NOT IN
+      <foreach close=")" collection="ids" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+
+    GROUP BY case_code,case_name,user_name,depart_id
+  </select>
+
+  <!-- 笔录检索 -->
+  <select id="recordScreen" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM `t_case_info`
+    WHERE 1 = 1 and is_delete != '1'
+    <if test="departs != null">
+      AND depart_id in
+      <foreach close=")" collection="departs" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="hasAuthIds != null">
+      AND id in
+      <foreach close=")" collection="hasAuthIds" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="caseName != null">
+      AND case_name like #{caseName,jdbcType=VARCHAR}
+    </if>
+    <if test="caseCode != null">
+      AND case_code like #{caseCode,jdbcType=VARCHAR}
+    </if>
+    <if test="askObj != null">
+      AND ask_obj_id = #{askObj,jdbcType=INTEGER}
+    </if>
+    <if test="status != null">
+      AND status = #{status,jdbcType=INTEGER}
+    </if>
+    <if test="jqxq != null">
+      AND jqxq = #{jqxq,jdbcType=VARCHAR}
+    </if>
+    <if test="startTime != null">
+      AND start_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND start_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    <if test="typeArr != null">
+      AND type_arr like #{typeArr,jdbcType=VARCHAR}
+    </if>
+    <if test="status != null">
+      AND status = #{status,jdbcType=INTEGER}
+    </if>
+    <if test="isEval != null">
+      AND is_evaluate = #{isEval,jdbcType=INTEGER}
+    </if>
+    <if test="jqxq != null">
+      AND jqxq = #{jqxq,jdbcType=VARCHAR}
+    </if>
+    <if test="keyword != null">
+      AND (ask_person1 like #{keyword,jdbcType=VARCHAR}
+      OR
+      ask_person2 like
+      #{keyword,jdbcType=VARCHAR} OR user_name like
+      #{keyword,jdbcType=VARCHAR}
+      OR recorder like
+      #{keyword,jdbcType=VARCHAR}
+      OR certificate_num like
+      #{keyword,jdbcType=VARCHAR})
+    </if>
+    ORDER BY create_time DESC
+  </select>
+
+  <select id="selectCaseInfoList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM t_case_info
+    WHERE 1 = 1 and is_delete != '1'
+
+    <if test="askObjId != null">
+      AND ask_obj_id = #{askObjId,jdbcType=VARCHAR}
+    </if>
+    <if test="createStartTime != null">
+      AND create_time &gt;= #{createStartTime,jdbcType=VARCHAR}
+    </if>
+    <if test="createEndTime != null">
+      AND create_time &lt;= #{createEndTime,jdbcType=VARCHAR}
+    </if>
+    <if test="departIds != null">
+      AND depart_id IN
+      <foreach close=")" collection="departIds" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="ids != null">
+      AND id IN
+      <foreach close=")" collection="ids" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="key != null">
+      AND (user_name like #{key,jdbcType=VARCHAR}
+      OR plain_text like #{key,jdbcType=VARCHAR}
+      )
+    </if>
+
+    ORDER BY create_time desc
+  </select>
+  <!--没有关联警情的笔录-->
+  <select id="selectNotAlarms" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    ,
+    <include refid="Blob_Column_List"/>
+    FROM t_case_info
+    WHERE is_delete != '1' and (case_code = '' or case_code is null)
+    <if test="startTime != null">
+      AND create_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND create_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    ORDER BY create_time desc
+  </select>
+
+  <!--文本字数少于100-->
+  <select id="selectText" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select * from t_case_info
+    where CHAR_LENGTH(plain_text)&lt;=100
+    <if test="startTime != null">
+      AND create_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND create_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    <if test="departIds != null">
+      AND depart_id IN
+      <foreach close=")" collection="departIds" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    ORDER BY create_time desc
+  </select>
+
+  <select id="selectMissing" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM t_case_info
+    WHERE plain_text NOT REGEXP '出生|户籍|现住|工作|身份证|联系电话'
+    <if test="startTime != null">
+      AND create_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND create_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    <if test="departIds != null">
+      AND depart_id IN
+      <foreach close=")" collection="departIds" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    ORDER BY create_time desc
+  </select>
+
+
+
+  <select id="getCaseInfoList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM t_case_info
+    WHERE 1 = 1 and is_delete != '1'
+    <if test="askObjId != null">
+      AND ask_obj_id = #{askObjId,jdbcType=VARCHAR}
+    </if>
+    <if test="startTime != null">
+      AND create_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND create_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    <if test="departIds != null">
+      AND depart_id IN
+      <foreach close=")" collection="departIds" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    ORDER BY create_time desc
+  </select>
+</mapper>

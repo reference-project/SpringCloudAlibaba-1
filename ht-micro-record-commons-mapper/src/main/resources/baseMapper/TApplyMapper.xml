@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TApplyMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TApply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="applyer_police_num" jdbcType="VARCHAR" property="applyerPoliceNum" />
+    <result column="applyer_name" jdbcType="VARCHAR" property="applyerName" />
+    <result column="asked_name" jdbcType="VARCHAR" property="askedName" />
+    <result column="applyer_id" jdbcType="INTEGER" property="applyerId" />
+    <result column="unit_id" jdbcType="INTEGER" property="unitId" />
+    <result column="case_info_ids" jdbcType="VARCHAR" property="caseInfoIds" />
+    <result column="case_count" jdbcType="INTEGER" property="caseCount" />
+    <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
+    <result column="apply_state" jdbcType="VARCHAR" property="applyState" />
+    <result column="apply_goal" jdbcType="VARCHAR" property="applyGoal" />
+    <result column="approve_time" jdbcType="TIMESTAMP" property="approveTime" />
+    <result column="approve_state" jdbcType="VARCHAR" property="approveState" />
+    <result column="approver_id" jdbcType="INTEGER" property="approverId" />
+    <result column="approve_prop" jdbcType="VARCHAR" property="approveProp" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, applyer_police_num, applyer_name, asked_name, applyer_id, unit_id, case_info_ids,
+    case_count, apply_time, apply_state, apply_goal, approve_time, approve_state, approver_id,
+    approve_prop
+  </sql>
+  <select id="searchApplyList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM `t_apply`
+    WHERE 1 = 1
+    <if test="startTime != null">
+      AND apply_time &gt;= #{startTime,jdbcType=VARCHAR}
+    </if>
+    <if test="endTime != null">
+      AND apply_time &lt;= #{endTime,jdbcType=VARCHAR}
+    </if>
+    <if test="approveState != null">
+      AND approve_state = #{approveState,jdbcType=VARCHAR}
+    </if>
+    <if test="applyerId != null">
+      AND applyer_id != #{applyerId,jdbcType=VARCHAR}
+    </if>
+    <if test="departs != null">
+      AND unit_id in
+      <foreach close=")" collection="departs" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="userIdList != null">
+      AND applyer_id in
+      <foreach close=")" collection="userIdList" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+    <if test="keyword != null">
+      AND (applyer_police_num like #{keyword,jdbcType=VARCHAR}
+      OR
+      applyer_name like
+      #{keyword,jdbcType=VARCHAR} OR asked_name like
+      #{keyword,jdbcType=VARCHAR})
+    </if>
+    ORDER BY apply_time DESC
+  </select>
+</mapper>

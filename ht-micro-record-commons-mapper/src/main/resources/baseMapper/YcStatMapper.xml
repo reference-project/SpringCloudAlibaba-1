@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.YcStatMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.YcStat">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="JJBH" jdbcType="VARCHAR" property="jjbh" />
+    <result column="JJRQSJ" jdbcType="TIMESTAMP" property="jjrqsj" />
+    <result column="XGSJ" jdbcType="TIMESTAMP" property="xgsj" />
+    <result column="CJBH" jdbcType="VARCHAR" property="cjbh" />
+    <result column="CJSJ" jdbcType="TIMESTAMP" property="cjsj" />
+    <result column="LQFKBS" jdbcType="INTEGER" property="lqfkbs" />
+    <result column="JQFKBS" jdbcType="INTEGER" property="jqfkbs" />
+    <result column="SPBS" jdbcType="INTEGER" property="spbs" />
+    <result column="WGFBS" jdbcType="INTEGER" property="wgfbs" />
+    <result column="PHAXGSJ" jdbcType="TIMESTAMP" property="phaxgsj" />
+    <result column="CITGC_TIME" jdbcType="TIMESTAMP" property="citgcTime" />
+    <result column="PHA_CITGC_TIME" jdbcType="TIMESTAMP" property="phaCitgcTime" />
+    <result column="JJDW" jdbcType="VARCHAR" property="jjdw" />
+    <result column="CJDW" jdbcType="VARCHAR" property="cjdw" />
+    <result column="CJLB" jdbcType="VARCHAR" property="cjlb" />
+    <result column="CJJG" jdbcType="VARCHAR" property="cjjg" />
+    <result column="CJJGNR" jdbcType="VARCHAR" property="cjjgnr" />
+    <result column="BJLX" jdbcType="VARCHAR" property="bjlx" />
+    <result column="CJFKSJ" jdbcType="TIMESTAMP" property="cjfksj" />
+    <result column="CJLB_NAME" jdbcType="VARCHAR" property="cjlbName" />
+    <result column="CJJG_NAME" jdbcType="VARCHAR" property="cjjgName" />
+    <result column="BJNR" jdbcType="LONGVARCHAR" property="bjnr" />
+  </resultMap>
+</mapper>

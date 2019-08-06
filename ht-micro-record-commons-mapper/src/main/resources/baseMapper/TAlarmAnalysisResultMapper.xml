@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.baseMapper.TAlarmAnalysisResultMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.TAlarmAnalysisResult">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="jjbh" jdbcType="VARCHAR" property="jjbh" />
+    <result column="bjlb" jdbcType="VARCHAR" property="bjlb" />
+    <result column="jjrqsj" jdbcType="TIMESTAMP" property="jjrqsj" />
+    <result column="bccljg" jdbcType="VARCHAR" property="bccljg" />
+    <result column="bjnr" jdbcType="VARCHAR" property="bjnr" />
+    <result column="cjlb" jdbcType="VARCHAR" property="cjlb" />
+    <result column="cljgnr" jdbcType="VARCHAR" property="cljgnr" />
+    <result column="cjdw" jdbcType="VARCHAR" property="cjdw" />
+    <result column="cjdwmc" jdbcType="VARCHAR" property="cjdwmc" />
+    <result column="involved_people_count" jdbcType="INTEGER" property="involvedPeopleCount" />
+    <result column="involved_goods_count" jdbcType="INTEGER" property="involvedGoodsCount" />
+    <result column="bjlbco" jdbcType="INTEGER" property="bjlbco" />
+    <result column="bjlbac" jdbcType="INTEGER" property="bjlbac" />
+    <result column="cljgnrco" jdbcType="INTEGER" property="cljgnrco" />
+    <result column="cljgnrac" jdbcType="INTEGER" property="cljgnrac" />
+    <result column="involved_people" jdbcType="INTEGER" property="involvedPeople" />
+    <result column="involved_goods" jdbcType="INTEGER" property="involvedGoods" />
+    <result column="cljgnrco_cause" jdbcType="INTEGER" property="cljgnrcoCause" />
+    <result column="cjxxdd" jdbcType="VARCHAR" property="cjxxdd" />
+    <result column="sfsjsx" jdbcType="TIMESTAMP" property="sfsjsx" />
+    <result column="sfsjxx" jdbcType="TIMESTAMP" property="sfsjxx" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="bjxs" jdbcType="VARCHAR" property="bjxs" />
+    <result column="pjyxm" jdbcType="VARCHAR" property="pjyxm" />
+    <result column="CITGC_TIME" jdbcType="TIMESTAMP" property="citgcTime" />
+    <result column="PHA_CITGC_TIME" jdbcType="TIMESTAMP" property="phaCitgcTime" />
+    <result column="involved_people_code" jdbcType="LONGVARCHAR" property="involvedPeopleCode" />
+    <result column="involved_goods_code" jdbcType="LONGVARCHAR" property="involvedGoodsCode" />
+  </resultMap>
+</mapper>

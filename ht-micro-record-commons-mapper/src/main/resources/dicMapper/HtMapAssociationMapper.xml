@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.micro.record.commons.mapper.dicMapper.HtMapAssociationMapper">
+  <resultMap id="BaseResultMap" type="com.ht.micro.record.commons.domain.HtMapAssociation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="police" jdbcType="VARCHAR" property="police" />
+    <result column="police_code" jdbcType="VARCHAR" property="policeCode" />
+    <result column="community" jdbcType="VARCHAR" property="community" />
+    <result column="community_code" jdbcType="VARCHAR" property="communityCode" />
+    <result column="c_alias" jdbcType="VARCHAR" property="cAlias" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="district_code" jdbcType="VARCHAR" property="districtCode" />
+    <result column="d_alias" jdbcType="VARCHAR" property="dAlias" />
+    <result column="patrol" jdbcType="VARCHAR" property="patrol" />
+    <result column="defence" jdbcType="VARCHAR" property="defence" />
+    <result column="longitude" jdbcType="DOUBLE" property="longitude" />
+    <result column="latitude" jdbcType="DOUBLE" property="latitude" />
+    <result column="type_code" jdbcType="INTEGER" property="typeCode" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="code_suffix" jdbcType="INTEGER" property="codeSuffix" />
+  </resultMap>
+
+<!---->
+  <sql id="Base_Column_List">
+    id, police, police_code, community, community_code, c_alias, district, district_code,
+    d_alias, patrol, defence, longitude, latitude, type_code, type, status, code_suffix
+  </sql>
+  <select id="getAddress" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM ht_map_association
+    WHERE 1=1 and status != 1
+    <if test="policeCode != null">
+      AND community_code = #{policeCode,jdbcType=VARCHAR}
+    </if>
+    <if test="typeCode != null">
+      AND type_code = #{typeCode,jdbcType=INTEGER}
+    </if>
+    <if test="keyWord != null">
+      AND (
+      community like #{keyWord,jdbcType=VARCHAR}
+      or
+      c_alias like #{keyWord,jdbcType=VARCHAR}
+      or
+      district like #{keyWord,jdbcType=VARCHAR}
+      or
+      d_alias like #{keyWord,jdbcType=VARCHAR}
+      )
+    </if>
+    order by district_code desc
+  </select>
+
+  <select id="getMaxId" resultType="java.lang.Integer">
+      SELECT MAX(id)
+       FROM ht_map_association;
+  </select>
+
+  <select id="mapCodeSuffix" resultType="java.lang.Integer">
+      SELECT Max(code_suffix)
+       FROM ht_map_association;
+  </select>
+
+
+  <insert id="insertInfo" parameterType="com.ht.micro.record.commons.domain.HtMapAssociation">
+
+    insert into ht_map_association (id,police, police_code, community,
+    community_code, c_alias, district,
+    district_code, d_alias, patrol,
+    defence, longitude, latitude,
+    type_code, type, status,code_suffix
+    )
+    values (#{id,jdbcType=INTEGER},#{police,jdbcType=VARCHAR}, #{policeCode,jdbcType=VARCHAR}, #{community,jdbcType=VARCHAR},
+    #{communityCode,jdbcType=VARCHAR}, #{cAlias,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR},
+    #{districtCode,jdbcType=VARCHAR}, #{dAlias,jdbcType=VARCHAR}, #{patrol,jdbcType=VARCHAR},
+    #{defence,jdbcType=VARCHAR}, #{longitude,jdbcType=DOUBLE}, #{latitude,jdbcType=DOUBLE},
+    #{typeCode,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},#{codeSuffix,jdbcType=INTEGER}
+    )
+  </insert>
+
+
+  <select id="selectByNameAlias" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM ht_map_association
+    WHERE 1=1 and status !=1
+    <if test="keyWord != null">
+      AND
+      (
+      c_alias like #{keyWord,jdbcType=VARCHAR}
+      or
+      community like #{keyWord,jdbcType=VARCHAR}
+      or
+      district like #{keyWord,jdbcType=VARCHAR}
+      or
+      d_alias like #{keyWord,jdbcType=VARCHAR}
+      )
+    </if>
+    <if test="communityCode != null">
+      AND community_code IN
+      <foreach close=")" collection="communityCode" item="item" open="(" separator=",">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+  </select>
+</mapper>
