@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: ht-micro-record-service-dubbo-consumer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+
+# 与nacos兼容性不好，配置到项目中
+dubbo:
+  scan:
+    base-packages: com.ht.micro.record.service.dubbo.consumer
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://192.168.2.7:8848?backup=192.168.2.7:8849,192.168.2.7:8850
+#################################nacos#################################
+#spring:
+#  application:
+#    name: ht-micro-record-service-dubbo-consumer
+#  main:
+#    allow-bean-definition-overriding: true
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+#      config:
+#        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+#    sentinel:
+#      transport:
+#        dashboard: 192.168.2.7:190
+#        port: 8719
+#
+#
+#server:
+#  port: 9503
+#
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
