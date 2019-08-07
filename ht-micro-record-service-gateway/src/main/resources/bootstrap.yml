@@ -1,0 +1,50 @@
+#############################nacos##############################
+#spring:
+#  application:
+#    name: ht-micro-record-service-gateway
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#    default-property-inclusion: non_null
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+#    sentinel:
+#      transport:
+#        port: 8721
+#        dashboard: 192.168.2.7:190
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#         http://localhost:9000/api/user/user/20 访问user服务
+#        - id: HT-MICRO-RECORD-SERVICE-USER
+#          uri: lb://ht-micro-record-service-user
+#          predicates:
+#            - Path=/api/user/**
+#          filters:
+#            - StripPrefix=2
+#
+#
+#
+#server:
+#  port: 9000
+#
+#
+#feign:
+#  sentinel:
+#    enabled: true
+#
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#
+#
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: debug
