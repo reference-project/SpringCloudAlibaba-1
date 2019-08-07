@@ -1,6 +1,7 @@
 package com.ht.micro.record.user.controller;
 
 import com.ht.micro.record.commons.domain.TbUser;
+import com.ht.micro.record.commons.domain.User;
 import com.ht.micro.record.commons.dto.AbstractBaseResult;
 import com.ht.micro.record.commons.service.TbUserService;
 import com.ht.micro.record.commons.validator.BeanValidator;
@@ -11,10 +12,13 @@ import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+import javax.servlet.http.HttpSession;
+
+@Controller
 @RequestMapping(value = "user")
 public class UserController extends AbstractBaseController<TbUser> {
     @Autowired
@@ -22,16 +26,43 @@ public class UserController extends AbstractBaseController<TbUser> {
     @Autowired
     private UserService userService;
 
-    // http://localhost:9506/user/2
-    //
+    @RequestMapping
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping("home")
+    public String home() {
+        return "home";
+    }
+
+
+    @PostMapping("login")
+    public String login(User user, HttpSession session) {
+        // 随机生成用户id
+        user.setUserId(Math.round(Math.floor(Math.random() * 10 * 1000)));
+        // 将用户信息保存到id中
+        session.setAttribute("USER", user);
+        return "home";
+    }
+
+    @PostMapping("logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("USER");
+        session.invalidate();
+        return "home";
+    }
+
     @ApiOperation(value = "查询用户", notes = "根据id获取用户名")
     @GetMapping(value = {"{id}"})
+    @ResponseBody
     public String getName(@PathVariable long id){
         return tbUserService.getById(id).getUsername();
     }
 
     @ApiOperation(value = "用户注册", notes = "参数为实体类，注意用户名和邮箱不要重复")
     @PostMapping(value = "reg")
+    @ResponseBody
     public AbstractBaseResult reg(@ApiParam(name = "tbUser", value = "用户模型") TbUser tbUser) {
         // 数据校验
         String message = BeanValidator.validator(tbUser);
