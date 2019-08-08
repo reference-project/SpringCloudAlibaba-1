@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/provider")
+@RequestMapping(value = "/provider",produces="application/json;charset=utf-8")
 @Slf4j
 public class ProviderController {
 
@@ -31,4 +31,17 @@ public class ProviderController {
         return "限流了";
     }
 
+    @GetMapping("name")
+    @SentinelResource(value = "getName", fallback = "getNameFallback")
+    public String userName(String name){
+        for (int i = 0; i < 100000000L; i++) {
+            throw new RuntimeException();
+        }
+        return "getName " + name;
+    }
+
+    // 该方法降级处理函数，参数要与原函数getName相同，并且返回值类型也要与原函数相同，此外，该方法必须与原函数在同一个类中
+    public String getNameFallback(String name){
+        return "getNameFallback";
+    }
 }

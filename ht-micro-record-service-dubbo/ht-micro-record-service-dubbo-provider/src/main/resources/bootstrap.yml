@@ -20,7 +20,10 @@ spring:
             server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
   main:
     allow-bean-definition-overriding: true
-
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
 dubbo:
   scan:
     base-packages: com.ht.micro.record.service.dubbo.provider.dubbo
