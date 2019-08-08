@@ -1,13 +1,15 @@
 package com.ht.micro.record.commons.domain;
 
+import com.ht.micro.record.commons.dto.AbstractBaseDomain;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Table(name = "t_apply")
-public class TApply {
+public class TApply extends AbstractBaseDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     /**
      * 申请人警号
@@ -96,14 +98,14 @@ public class TApply {
     /**
      * @return id
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

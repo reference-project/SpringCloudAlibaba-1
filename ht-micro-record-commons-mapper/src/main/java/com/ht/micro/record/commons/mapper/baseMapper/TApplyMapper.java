@@ -9,4 +9,5 @@ import java.util.Map;
 public interface TApplyMapper extends MyMapper<TApply> {
     List<TApply> searchApplyList(Map<String, Object> map);
 
+    List<TApply> getByAskedName(String name);
 }

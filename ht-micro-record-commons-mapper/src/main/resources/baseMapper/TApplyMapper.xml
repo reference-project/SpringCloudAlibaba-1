@@ -65,4 +65,9 @@
     </if>
     ORDER BY apply_time DESC
   </select>
+
+  <select id="getByAskedName" parameterType="string" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/>
+    FROM `t_apply` where asked_name = #{name,jdbcType=VARCHAR}
+  </select>
 </mapper>
