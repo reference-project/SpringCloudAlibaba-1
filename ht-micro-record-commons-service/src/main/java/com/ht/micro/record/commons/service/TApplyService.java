@@ -1,5 +1,6 @@
 package com.ht.micro.record.commons.service;
 
+
 import com.ht.micro.record.commons.domain.TApply;
 
 import java.util.List;

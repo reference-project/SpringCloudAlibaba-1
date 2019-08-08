@@ -6,6 +6,18 @@ spring:
       config:
         file-extension: yaml
         server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+    sentinel:
+      transport:
+        port: 8720
+        dashboard: 192.168.2.7:190
+      datasource:
+        ds:
+          nacos:
+            dataId: ${spring.application.name}-sentinel
+            groupId: DEFAULT_GROUP
+            rule-type: flow
+            data-type: json
+            server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
   main:
     allow-bean-definition-overriding: true
 

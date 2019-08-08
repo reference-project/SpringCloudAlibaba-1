@@ -32,9 +32,6 @@ public class TApplyController extends AbstractBaseController {
         return tApplyService.getByAskedName(name);
     }
 
-
-
-
     /**
      * 消费者传递对象参数，提供者接收参数的方式必须是 POST
      * 并且对象参数前要加上 @RequestBody 的注解

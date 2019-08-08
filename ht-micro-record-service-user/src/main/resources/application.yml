@@ -1,5 +1,13 @@
 spring:
   cloud:
+    sentinel:
+      datasource:
+        ds:
+          nacos:
+            dataId: ${spring.application.name}-sentinel
+            groupId: DEFAULT_GROUP
+            rule-type: flow
+            server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
     stream:
       rocketmq:
         binder:
@@ -81,6 +89,7 @@ spring:
 #server:
 #  port: 9506
 #
+# 进行该项设置，可以通过sentinel访问到该客户端的所有规则
 #management:
 #  endpoints:
 #    web:
