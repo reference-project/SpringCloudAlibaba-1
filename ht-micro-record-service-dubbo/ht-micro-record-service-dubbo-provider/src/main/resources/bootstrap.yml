@@ -9,15 +9,24 @@ spring:
     sentinel:
       transport:
         port: 8720
-        dashboard: 192.168.2.7:190
+        dashboard: localhost:8080
       datasource:
         ds:
           nacos:
-            dataId: ${spring.application.name}-sentinel
+            dataId: ${spring.application.name}-flow-rules
             groupId: DEFAULT_GROUP
-            rule-type: flow
+            rule-type: flow # 流控
+#            rule-type: degrade # 熔断
             data-type: json
             server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+        ds1:
+          nacos:
+            dataId: ${spring.application.name}-degrade-rules
+            groupId: DEFAULT_GROUP
+            rule-type: degrade # 熔断
+            data-type: json
+            server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
+
   main:
     allow-bean-definition-overriding: true
   http:
@@ -67,11 +76,6 @@ es:
 #    nacos:
 #      discovery:
 #        server-addr: 192.168.2.7:8848,192.168.2.7:8849,192.168.2.7:8850
-#    sentinel:
-#      transport:
-#        port: 8719
-#        dashboard: 192.168.2.7:190
-#
 #
 #server:
 #  port: 9502

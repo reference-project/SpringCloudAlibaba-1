@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.ht.micro.record.commons.domain.TApply;
 import com.ht.micro.record.commons.service.TApplyService;
 import com.ht.micro.record.commons.web.AbstractBaseController;
+import com.ht.micro.record.user.dao.BaseRedisDaoInter;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +12,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
@@ -18,17 +20,19 @@ import java.util.List;
 public class TApplyController extends AbstractBaseController {
     @Autowired
     private TApplyService tApplyService;
-
+    @Resource
+    private BaseRedisDaoInter redisDaoInter;
 
     /** http://localhost:9506/apply/asked/任大龙
      * @param name
      * @return
      */
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "askedName", value = "被询问人名", required = true, paramType = "path")
+            @ApiImplicitParam(name = "name", value = "被询问人名", required = true, paramType = "path")
     })
     @PostMapping(value = "asked/{name}")
     public List<TApply> getByAskedName(@PathVariable String name){
+        redisDaoInter.addList("apply",tApplyService.getByAskedName(name));
         return tApplyService.getByAskedName(name);
     }
 

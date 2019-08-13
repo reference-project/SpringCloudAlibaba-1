@@ -35,7 +35,7 @@ public class ProviderController {
     @SentinelResource(value = "getName", fallback = "getNameFallback")
     public String userName(String name){
         for (int i = 0; i < 100000000L; i++) {
-            throw new RuntimeException();
+//            throw new RuntimeException();
         }
         return "getName " + name;
     }
