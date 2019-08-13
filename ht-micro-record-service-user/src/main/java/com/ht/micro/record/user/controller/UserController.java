@@ -3,9 +3,9 @@ package com.ht.micro.record.user.controller;
 import com.ht.micro.record.commons.domain.TbUser;
 import com.ht.micro.record.commons.domain.User;
 import com.ht.micro.record.commons.dto.AbstractBaseResult;
-import com.ht.micro.record.commons.service.TbUserService;
 import com.ht.micro.record.commons.validator.BeanValidator;
 import com.ht.micro.record.commons.web.AbstractBaseController;
+import com.ht.micro.record.user.service.TbUserService;
 import com.ht.micro.record.user.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -17,6 +17,7 @@ import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+
 
 @Controller
 @RequestMapping(value = "user")
@@ -58,6 +59,20 @@ public class UserController extends AbstractBaseController<TbUser> {
     @ResponseBody
     public String getName(@PathVariable long id){
         return tbUserService.getById(id).getUsername();
+    }
+
+    @ApiOperation(value = "删除用户", notes = "删除用户")
+    @DeleteMapping(value = {"{id}"})
+    @ResponseBody
+    public void delete(@PathVariable long id){
+        tbUserService.deleteUser(id);
+    }
+
+    @ApiOperation(value = "更新用户", notes = "更新用户")
+    @PostMapping
+    @ResponseBody
+    public TbUser update(TbUser userInfo){
+        return tbUserService.updateUser(userInfo);
     }
 
     @ApiOperation(value = "用户注册", notes = "参数为实体类，注意用户名和邮箱不要重复")
