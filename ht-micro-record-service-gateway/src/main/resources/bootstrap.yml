@@ -26,6 +26,8 @@
 #            - Path=/api/user/**
 #          filters:
 #            - StripPrefix=2
+#            # Between Before After AOP形式实现路由前后执行
+#            - Method=GET,POST
 #
 #
 #

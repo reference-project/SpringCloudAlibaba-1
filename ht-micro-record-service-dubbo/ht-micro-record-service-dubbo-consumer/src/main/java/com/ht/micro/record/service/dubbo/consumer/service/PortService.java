@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @Description: feign远程调用接口服务
  */
 
-@FeignClient(value = "ht-micro-record-service-dubbo-provider")
+@FeignClient(value = "ht-micro-record-service-dubbo-provider", fallback = NacosProviderFallback.class)
 public interface PortService {
+    // FeignClient中每一个@RequestParam 都要设置value
     @GetMapping(value = "/provider/port")
     String showPort();
 }

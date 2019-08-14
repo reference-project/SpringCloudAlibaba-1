@@ -84,6 +84,7 @@
         <!-- Spring Cloud End -->
 
         <!-- Commons Begin -->
+        <!--库使用webflux了，不需要spring-boot-starter-web配置了，但是过滤器需要servlet支持-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
