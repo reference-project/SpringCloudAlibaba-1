@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.2.7:9876
+      bindings:
+        output:
+          content-type: application/json
+          destination: topic-email
+          producer:
+            group: group-email
+server:
+  port: 9508
