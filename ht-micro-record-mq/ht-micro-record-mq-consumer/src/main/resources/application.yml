@@ -15,5 +15,11 @@ spring:
           group: group-email
           consumer:
             maxAttempts: 1
+      default-binder: rabbit
+  rabbitmq:
+    addresses: 192.168.2.7
+    port: 5672
+    username: admin
+    password: admin
 server:
   port: 9507

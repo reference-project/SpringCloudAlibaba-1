@@ -1,5 +1,6 @@
 package com.ht.micro.record;
 
+import com.ht.micro.record.service.ProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,6 +23,8 @@ public class ProviderApplication implements CommandLineRunner {
 
     @Autowired
     private MessageChannel output;
+    @Autowired
+    private ProviderService providerService;
 
 
     public static void main(String[] args) {
@@ -33,5 +36,6 @@ public class ProviderApplication implements CommandLineRunner {
     public void run(String... args) throws Exception{
         System.out.println("hello");
         output.send(MessageBuilder.withPayload("Hello RocketMQ").build());
+        providerService.send("hello", "world !" , 10);
     }
 }
