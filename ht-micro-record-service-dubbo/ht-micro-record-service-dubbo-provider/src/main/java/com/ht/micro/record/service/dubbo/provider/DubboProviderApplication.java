@@ -11,8 +11,11 @@ import org.springframework.context.annotation.Bean;
 public class DubboProviderApplication {
 
     public static void main(String[] args) {
+        // 若服务中配置redis 需要es优先配置netty
+        System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(DubboProviderApplication.class, args);
     }
+
 
     // 注解支持的配置Bean
     @Bean

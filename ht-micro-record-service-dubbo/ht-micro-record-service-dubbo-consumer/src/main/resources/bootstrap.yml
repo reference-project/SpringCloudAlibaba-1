@@ -35,13 +35,11 @@ dubbo:
 #        dashboard: 192.168.2.7:190
 #        port: 8719
 #
-#
-#server:
-#  port: 9503
-#
-#
 #management:
 #  endpoints:
 #    web:
 #      exposure:
 #        include: '*'
+#server:
+#  port: 9503
+#

@@ -214,6 +214,18 @@
         </repository>
 
         <repository>
+            <id>3rdParty</id>
+            <name>3rdParty Repository</name>
+            <url>http://192.168.2.7:182/repository/3rdParty/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
             <id>aliyun-repos</id>
             <name>Aliyun Repository</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
